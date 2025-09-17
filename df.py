@@ -87,15 +87,28 @@ col_numero = "Número"
 col_origem = "Origem"
 col_link = "Link do Normativo"
 col_aplic = "Aplicável ao BNDES?"
+col_relev = "1ª Avaliação de Relevância (AIC - Time de Compliance)"
+
+ordem = {0: 0, "Baixa": 1, "Média": 2, "Alta": 3}
+
+
+df_original["relevancia_num"] = df_original[col_relev].map(ordem)
+
+
+df_unico = df_original.loc[
+    df_original.groupby(col_link)["relevancia_num"].idxmax()
+].drop(columns="relevancia_num")
+
 
 processed_data = []
 
-for _, row in df_original.iterrows():
+for _, row in df_unico.iterrows():
     origem = str(row[col_origem])
     tipo = str(row[col_tipo])
     numero = str(row[col_numero])
     link = row[col_link]
     aplicavel_str = row[col_aplic]
+    relevancia = row[col_relev]
 
     texto_normativo = None
 
@@ -108,12 +121,28 @@ for _, row in df_original.iterrows():
     if texto_normativo:
         aplicavel_bndes = isinstance(aplicavel_str, str) and aplicavel_str.strip().lower() == "sim"
         processed_data.append({
-            "texto_normativo": texto_normativo,
-            "aplicavel_bndes": aplicavel_bndes
-        })
+        "link_normativo": link,         
+        "texto_normativo": texto_normativo,
+        "aplicavel_bndes": aplicavel_bndes,
+        "relevancia": relevancia
+    })
 
 df_final = pd.DataFrame(processed_data)
 
 print("Total de normativos processados:", len(df_final))
 
 df_final.to_csv("normativos_processados.csv", index=False, encoding="utf-8")
+
+
+
+
+
+# df_completo = df_original.merge(df_final, left_on="Link do Normativo", right_on="link_normativo", how="inner")
+
+# df_completo = df_completo.rename(columns={"Área": "area","1ª Avaliação de Relevância (AIC - Time de Compliance)": "relevancia"})
+
+# df_aplicaveis = df_completo[df_completo["aplicavel_bndes"] == True]
+
+# df_limpo = df_aplicaveis[["link_normativo","texto_normativo","aplicavel_bndes","area","relevancia"]]
+
+# df_limpo.to_csv("normativos_aplicaveis.csv", index=False, encoding="utf-8")

@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report, precision_recall_curve
-import numpy as np
+
 
 
 data = pd.read_csv('normativos_processados.csv')
@@ -53,3 +53,4 @@ print(classification_report(y_test, y_pred_adj))
 y_pred_default = (y_proba >= 0.5).astype(int)
 print("Sem ajuste:")
 print(classification_report(y_test, y_pred_default))
+
