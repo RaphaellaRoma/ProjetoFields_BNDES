@@ -80,7 +80,8 @@ def get_from_link(url):
     except Exception:
         return None
 
-df_original = pd.read_excel("Base de Dados YTD2025.xlsx")
+### ATUALIZANDO AQUI PARA NOVO DF COM MAIS DADOS
+df_original = pd.read_excel("df_atualizado.xlsx")
 
 col_tipo = "Tipo do Normativo"
 col_numero = "Número"
@@ -96,7 +97,7 @@ df_original["relevancia_num"] = df_original[col_relev].map(ordem)
 
 
 df_unico = df_original.loc[
-    df_original.groupby(col_link)["relevancia_num"].idxmax()
+    df_original.groupby(col_link)["relevancia_num"].idxmax().dropna() # adicionando a limpeza dos indices nan
 ].drop(columns="relevancia_num")
 
 
