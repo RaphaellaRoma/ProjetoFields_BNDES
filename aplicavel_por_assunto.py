@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report, precision_recall_curve
-
+ 
 
 ## Preparando o DataFrame 
 
@@ -37,7 +37,7 @@ X_test_tfidf = vectorizer.transform(X_test)
 ## Treinamento e teste com a Rede Neural 
 
 model = MLPClassifier(
-    hidden_layer_sizes=(50, 30),  #50, 30
+    hidden_layer_sizes=(50, 30),  
     activation="relu",
     solver="adam",
     max_iter=500, 
