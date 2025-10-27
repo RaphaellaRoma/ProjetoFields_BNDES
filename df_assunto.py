@@ -24,6 +24,8 @@ df_consolidado = pd.concat([df_areas['Assunto do Normativo'], y_multilabel], axi
 # Agrupa por assunto e soma as colunas binárias, no final cada linha é um normativo único 
 # e as colunas de área indicam com 1 todas as áreas às quais o normativo pertence
 df_areas_final = df_consolidado.groupby('Assunto do Normativo').sum()
+# Garantindo classificação binária 
+df_areas_final = (df_areas_final > 0).astype(int)
 df_areas_final = df_areas_final.reset_index()
 
 
