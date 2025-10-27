@@ -1,5 +1,6 @@
 import pandas as pd
 from pathlib import Path
+import numpy as np 
 
 # lendo bases com pathlib
 df1 = pd.read_excel(Path.cwd() / "Base de Dados YTD2025.xlsx")
@@ -18,11 +19,19 @@ df2.rename(columns={'Aplicável a Empresa':'Aplicável ao BNDES?', 'Origem do No
 intersecao = df1.loc[:, df1.columns.isin(df2.columns)]
 #intersecao = df1.columns.intersection(df2.columns)
 
-# Criando e exportando df final
+# Criando df final 
 df_final = pd.concat([df1, df2], axis=0, ignore_index=True)
+
+
+## Padronização das classificações 
+relevance_col = '1ª Avaliação de Relevância (AIC - Time de Compliance)'
+df_final[relevance_col] = df_final[relevance_col].astype(str).str.strip()
+df_final[relevance_col] = df_final[relevance_col].replace('Indefinida', '0')
+
+df_final['Área'] = df_final['Área'].astype(str).str.strip()
+df_final['Área'] = df_final['Área'].replace(['0', 'nan', ''], np.nan)
+
+
+# Exportando df final
 df_final.to_excel('df_atualizado.xlsx', 'ProjetoFields_BNDES')
 
-print(df1.columns)
-print(df2.columns)
-print(intersecao.columns)
-print(df_final.info())
