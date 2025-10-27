@@ -3,6 +3,9 @@ import pandas as pd
 df = pd.DataFrame(pd.read_excel('df_atualizado.xlsx'))
 # Linhas sem assunto não são usadas
 df = df[df["Assunto do Normativo"].astype(str) != "..."]
+# Limpeza (tirando espaços aleatórios)
+df["Assunto do Normativo"] = (df["Assunto do Normativo"].astype(str).str.replace('_x000D_', ' ', regex=False).str.replace(r'[\r\n]', ' ', regex=True))
+df["Assunto do Normativo"] = (df["Assunto do Normativo"].str.replace(' +', ' ', regex=True).str.strip())
 
 
 ## Preparando colunas de classificação única (Aplicabilidade e Relevância)
