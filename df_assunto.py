@@ -24,7 +24,7 @@ df = df.rename(columns={
 })
 
 
-ordem = {0: 0, "Baixa": 1, "Média": 2, "Alta": 3}
+ordem = {"0": 0, "Baixa": 1, "Média": 2, "Alta": 3}
 df["relevancia_num"] = df[col_relev].map(ordem)
 
 df_valores_unicos = df.loc[
