@@ -47,3 +47,5 @@ df_final = pd.merge(
 df_final = df_final.rename(columns={'1ª Avaliação de Relevância (AIC - Time de Compliance)': 'Relevância'})
 df_final.to_csv('df_assunto_limpo.csv', index=False)
 
+
+print(len(df_final))
