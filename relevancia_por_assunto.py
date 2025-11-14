@@ -9,10 +9,10 @@ from sklearn.metrics import classification_report, precision_recall_curve
 
 df = pd.DataFrame(pd.read_csv('df_assunto_limpo.csv'))
 # Normas sem classificação de aplicáveis (não aplicável ou indefinida) não são usadas 
-df = df[df['Relevância'].astype(str) != "0"]
+df = df[df['relevancia'].astype(str) != "0"]
 
-X = df["Assunto do Normativo"].astype(str)
-y = df["Relevância"].map({'Baixa': 1, 'Média': 2, 'Alta': 3})
+X = df["assunto_normativo"].astype(str)
+y = df["relevancia"].map({'Baixa': 1, 'Média': 2, 'Alta': 3})
 
 # Garantindo que X e y tenham o mesmo tamanho
 y = y.dropna() 

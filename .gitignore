@@ -1,0 +1,34 @@
+# Arquivos e pastas grandes que não devem ser versionados
+
+# Modelo BERT e checkpoints
+modelo_salvo/
+*.safetensors
+*.pt
+*.pth
+
+# Dados processados
+normativos_processados.csv
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Ambientes virtuais
+venv/
+env/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
