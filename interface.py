@@ -6,7 +6,7 @@ import threading  # Para processamento em paralelo
 import queue      # Para comunicação thread-safe
 
 # --- NOSSAS IMPORTAÇÕES DOS MODELOS ---
-#from predict_bert import predict_texts as predict_relevance_bert
+from predict_bert import predict_texts as predict_relevance_bert
 from predicao_aplicavel_assunto import predict_applicability
 
 # --- Constantes de Cor ---
@@ -196,8 +196,8 @@ class TextClassifierApp(ctk.CTk):
         # --- PREDIÇÃO REAL ---
         
         # Predição de Relevância (BERT - Simulado/Removido)
-        # relevance = predict_relevance_bert(text)[0] # Se ativado
-        relevance = "baixa"
+        relevance = predict_relevance_bert(text)[0] 
+        # relevance = "baixa"
 
         # Predição de Aplicabilidade (NN)
         print("Thread: Iniciando predição do modelo NN (Aplicabilidade)...")

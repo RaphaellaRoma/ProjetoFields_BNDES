@@ -54,6 +54,6 @@ if __name__ == "__main__":
     ]
 
     pred = predict_texts(exemplo)
-    print("\n🔮 Previsões:")
+    print("\n Previsões:")
     for texto, p in zip(exemplo, pred):
         print(f"- \"{texto}\" → classe: {p}")
