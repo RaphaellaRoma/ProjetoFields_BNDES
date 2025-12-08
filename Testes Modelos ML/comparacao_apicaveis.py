@@ -12,7 +12,7 @@ from sklearn.metrics import classification_report, accuracy_score, f1_score, con
 from xgboost import XGBClassifier
 
 
-df = pd.read_csv('../Dados CSV/normativos_processados.csv')
+df = pd.read_csv('./Dados CSV/normativos_processados.csv')
 
 X = df["texto_normativo"].astype(str)
 y = df["aplicavel_bndes"].astype(int)  # 0/1

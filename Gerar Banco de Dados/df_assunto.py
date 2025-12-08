@@ -1,6 +1,6 @@
 import pandas as pd 
 
-df = pd.read_excel('../Dados Excel/df_atualizado.xlsx')
+df = pd.read_excel('./Dados Excel/df_atualizado.xlsx')
 # Linhas sem assunto não são usadas
 df = df[df["Assunto do Normativo"].astype(str) != "..."]
 # Limpeza (tirando espaços aleatórios)
@@ -68,7 +68,7 @@ df_final = pd.merge(
 ## Salvando em um csv
 
 df_final = df_final.rename(columns={'1ª Avaliação de Relevância (AIC - Time de Compliance)': 'Relevância'})
-df_final.to_csv('df_assunto_limpo.csv', index=False)
+df_final.to_csv('./Dados CSV/df_assunto_limpo.csv', index=False)
 
 
 print(len(df_final))

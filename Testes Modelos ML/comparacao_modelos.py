@@ -15,7 +15,7 @@ from xgboost import XGBClassifier
 
 
 
-df = pd.read_csv("../Dados CSV/normativos_processados.csv")
+df = pd.read_csv("./Dados CSV/normativos_processados.csv")
 df = df[df["aplicavel_bndes"] == True]
 
 X = df["texto_normativo"].astype(str)

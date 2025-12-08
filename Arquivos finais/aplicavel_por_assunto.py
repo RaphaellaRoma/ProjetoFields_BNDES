@@ -7,7 +7,7 @@ import joblib
 import os 
 
 ## Preparando o DataFrame 
-df = pd.DataFrame(pd.read_csv('df_assunto_limpo.csv'))
+df = pd.DataFrame(pd.read_csv('./Dados CSV/df_assunto_limpo.csv'))
 X = df["assunto_normativo"].astype(str)
 y = df["aplicavel_bndes"].map({'Sim': 1, 'Não': 0}) 
 

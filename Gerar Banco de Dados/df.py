@@ -81,7 +81,7 @@ def get_from_link(url):
         return None
 
 ### ATUALIZANDO AQUI PARA NOVO DF COM MAIS DADOS
-df_original = pd.read_excel("../Dados Excel/df_atualizado.xlsx")
+df_original = pd.read_excel("./Dados Excel/df_atualizado.xlsx")
 
 col_tipo = "Tipo do Normativo"
 col_numero = "Número"
@@ -132,7 +132,7 @@ df_final = pd.DataFrame(processed_data)
 
 print("Total de normativos processados:", len(df_final))
 
-df_final.to_csv("../Dados CSV/normativos_processados.csv", index=False, encoding="utf-8")
+df_final.to_csv("./Dados CSV/normativos_processados.csv", index=False, encoding="utf-8")
 
 
 

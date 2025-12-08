@@ -7,7 +7,7 @@ from sklearn.metrics import classification_report, precision_recall_curve
 
 ## Preparando o DataFrame 
 
-df = pd.DataFrame(pd.read_csv('Dados CSV/df_assunto_limpo.csv'))
+df = pd.DataFrame(pd.read_csv('./Dados CSV/df_assunto_limpo.csv'))
 # Normas sem classificação de aplicáveis (não aplicável ou indefinida) não são usadas 
 df = df[df['relevancia'].astype(str) != "0"]
 

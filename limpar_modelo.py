@@ -1,7 +1,7 @@
 import os
 import shutil
 
-path = "modelo_salvo"
+path = "Modelos/modelo_bert_salvo"
 
 delete_patterns = [
     "checkpoint-",

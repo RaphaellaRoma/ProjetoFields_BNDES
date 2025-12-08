@@ -5,7 +5,7 @@ import joblib
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import numpy as np
 
-SAVE_DIR = "../Modelos/modelo_salvo"
+SAVE_DIR = "./Modelos/modelo_bert_salvo"
 
 
 def predict_texts(texts):

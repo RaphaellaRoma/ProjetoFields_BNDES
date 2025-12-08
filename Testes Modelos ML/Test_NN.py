@@ -6,7 +6,7 @@ from sklearn.metrics import classification_report, precision_recall_curve
 
 
 
-data = pd.read_csv('/Dados CSV/normativos_processados.csv')
+data = pd.read_csv('./Dados CSV/normativos_processados.csv')
 df = pd.DataFrame(data)
 
 

@@ -37,7 +37,7 @@ class TextClassifierApp(ctk.CTk):
         self.grid_rowconfigure(0, weight=1)
 
         # --- Carregar Logo e Fila de Comunicação ---
-        logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bndes_logo.png")
+        logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../bndes_logo.png")
         self.logo_pil_image = Image.open(logo_path)
         self.result_queue = queue.Queue() # Fila Thread-Safe
 
