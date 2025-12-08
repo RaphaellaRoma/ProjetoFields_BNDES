@@ -5,7 +5,7 @@ import joblib
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import numpy as np
 
-SAVE_DIR = "./modelo_salvo"
+SAVE_DIR = "../Modelos/modelo_salvo"
 
 
 def predict_texts(texts):
@@ -49,8 +49,8 @@ def predict_texts(texts):
 
 if __name__ == "__main__":
     exemplo = [
-        "Projeto de energia renovável com foco em sustentabilidade.",
-        "Assunto relacionado a investimentos de impacto ambiental."
+        "Dispõe sobre as regras aplicáveis ao regime de Facilitação do Acesso a Capital e de Incentivos a Listagens – FÁCIL no âmbito do mercado de capitais.(Publicada no DOU de 04.07.2025)",
+        "Ofício Circular para comunicar ao mercado a respeito de atualizações no sistema FundosNet, com aprimoramentos nos formulários estruturados."
     ]
 
     pred = predict_texts(exemplo)

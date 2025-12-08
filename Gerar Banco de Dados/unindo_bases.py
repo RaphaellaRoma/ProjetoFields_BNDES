@@ -3,8 +3,8 @@ from pathlib import Path
 import numpy as np 
 
 # lendo bases com pathlib
-df1 = pd.read_excel(Path.cwd() / "Base de Dados YTD2025.xlsx")
-df2 = pd.read_excel(Path.cwd() / "Normas 23-08-2025 a 22-09-2025 1.xlsx")
+df1 = pd.read_excel(Path.cwd() / "Dados Excel/Base de Dados YTD2025.xlsx")
+df2 = pd.read_excel(Path.cwd() / "Dados Excel/Normas 23-08-2025 a 22-09-2025 1.xlsx")
 
 # Excluindo colunas desnecessarias
 df1.drop(['2ª Avaliação de Relevância (Áreas BNDES)'], axis=1, inplace=True)
@@ -33,5 +33,5 @@ df_final['Área'] = df_final['Área'].replace(['0', 'nan', ''], np.nan)
 
 
 # Exportando df final
-df_final.to_excel('df_atualizado.xlsx', 'ProjetoFields_BNDES')
+df_final.to_excel('Dados Excel/df_atualizado.xlsx', 'ProjetoFields_BNDES')
 

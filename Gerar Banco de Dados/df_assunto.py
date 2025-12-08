@@ -1,6 +1,6 @@
 import pandas as pd 
 
-df = pd.read_excel('df_atualizado.xlsx')
+df = pd.read_excel('../Dados Excel/df_atualizado.xlsx')
 # Linhas sem assunto não são usadas
 df = df[df["Assunto do Normativo"].astype(str) != "..."]
 # Limpeza (tirando espaços aleatórios)

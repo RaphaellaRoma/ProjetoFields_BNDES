@@ -23,9 +23,9 @@ from torch.nn import CrossEntropyLoss
 from datasets import Dataset
 
 # Configurações gerais
-CSV_PATH = "df_assunto_limpo.csv"
+CSV_PATH = "../Dados CSV/df_assunto_limpo.csv"
 MODEL_NAME = "neuralmind/bert-base-portuguese-cased"
-SAVE_DIR = "./modelo_salvo"
+SAVE_DIR = "../Modelos/modelo_bert_salvo"
 
 SEED = 42
 MAX_LEN = 256

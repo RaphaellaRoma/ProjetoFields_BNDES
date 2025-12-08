@@ -3,7 +3,7 @@ import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neural_network import MLPClassifier
 
-SAVE_DIR_NN = "./modelo_nn_salvo"
+SAVE_DIR_NN = "../Modelos/modelo_nn_salvo"
 
 # --- Carregar artefatos na inicialização do módulo ---
 try:

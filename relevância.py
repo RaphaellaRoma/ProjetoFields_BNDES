@@ -4,9 +4,12 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report
 from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import RandomizedSearchCV
+import numpy as np
+from sklearn.linear_model import LogisticRegression
 
 
-data = pd.read_csv('normativos_processados.csv')
+data = pd.read_csv('Dados CSC/normativos_processados.csv')
 df = pd.DataFrame(data)
 df = df[df["aplicavel_bndes"] == True]
 
@@ -33,8 +36,6 @@ vectorizer = TfidfVectorizer(
 X_train_tfidf = vectorizer.fit_transform(X_train)
 X_test_tfidf = vectorizer.transform(X_test)
 
-from sklearn.model_selection import RandomizedSearchCV
-import numpy as np
 
 hidden_layer_sizes=[]
 
@@ -86,11 +87,6 @@ print(classification_report(y_test, y_pred))
 
 
 
-
-
-
-
-from sklearn.linear_model import LogisticRegression
 
 logreg = LogisticRegression(
     max_iter=2000,
