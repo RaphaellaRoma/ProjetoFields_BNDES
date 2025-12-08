@@ -9,7 +9,7 @@ import numpy as np
 from sklearn.linear_model import LogisticRegression
 
 
-data = pd.read_csv('Dados CSC/normativos_processados.csv')
+data = pd.read_csv('Dados CSV/normativos_processados.csv')
 df = pd.DataFrame(data)
 df = df[df["aplicavel_bndes"] == True]
 
