@@ -36,7 +36,7 @@ python "Arquivos finais\interface.py"
 Observações:
 - O arquivo carrega funções de `predict_bert` e `predicao_aplicavel_assunto`. Garanta que esses módulos (e os modelos salvos em `Modelos/`) estejam presentes e configurados.
 
-```
+
 
 **Estrutura principal do repositório**
 - `Arquivos finais/` — scripts finais, incluindo `interface.py`.
@@ -45,7 +45,7 @@ Observações:
 - `Testes Modelos ML/` — scripts de comparação e testes de modelos.
 
 
-``
+
 **Documentação Completa do Repositório**
 
 Visão geral rápida
