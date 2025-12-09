@@ -54,11 +54,11 @@ Visão geral rápida
 Estrutura do repositório
 - `Arquivos finais/` — scripts prontos para uso: `interface.py`, `predict_bert.py`, `predicao_aplicavel_assunto.py`, entre outros.
 - `Dados CSV/` — dados CSV utilizados no projeto (ex.: `df_assunto_limpo.csv`).
-- `Dados Excel/` — planilhas originais (se houver).
+- `Dados Excel/` — planilhas originais.
 - `Gerar Banco de Dados/` — scripts para coletar e unificar dados (ex.: `df.py`, `df_assunto.py`, `unindo_bases.py`).
 - `Modelos/` — modelos treinados salvos (ex.: `modelo_nn_salvo/`).
 - `Testes Modelos ML/` — scripts de teste e comparação de modelos (Logistic Regression, Random Forest, NN, XGBoost, métricas e visualizações).
-- `limpar_modelo.py` — utilitários para limpeza de modelos/artefatos.
+- `limpar_modelo.py` — utilitários para limpeza de modelos.
 
 ## Dependências
 
@@ -68,10 +68,6 @@ python -m venv .venv
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
-
-Observações sobre dependências adicionais
-- Se você usar modelos BERT reais, precisará de uma GPU/CPU compatível e versões compatíveis de `torch` e `transformers`. Ajuste `requirements.txt` conforme sua plataforma (ex.: instalar `torch` com o comando do site oficial para suporte CUDA).
-
 Como executar a interface GUI
 - Com o virtualenv ativado:
 
