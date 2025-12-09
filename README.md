@@ -104,7 +104,7 @@ Modelos
 
 ## Autores
 
-**Beatriz Marques**
-**Gabrielle Mascarelo**
-**Raphaella Roma**
+- **Beatriz Marques**
+- **Gabrielle Mascarelo**
+- **Raphaella Roma**
 # ProjetoFields_BNDES
