@@ -90,7 +90,7 @@ col_link = "Link do Normativo"
 col_aplic = "Aplicável ao BNDES?"
 col_relev = "1ª Avaliação de Relevância (AIC - Time de Compliance)"
 
-ordem = {0: 0, "Baixa": 1, "Média": 2, "Alta": 3}
+ordem = {"0": 0, "Baixa": 1, "Média": 2, "Alta": 3}
 
 
 df_original["relevancia_num"] = df_original[col_relev].map(ordem)

@@ -1,0 +1,15 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+xgboost
+joblib
+requests
+beautifulsoup4
+pdfplumber
+Pillow
+customtkinter
+torch
+transformers
+datasets
